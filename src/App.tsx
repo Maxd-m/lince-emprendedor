@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import Login from "./pages/auth/Login.tsx";
+import Product from "./pages/products/Product.tsx";
+import Vendors from "./pages/vendor/Vendors.tsx";
 import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
 
 import "./App.css";
@@ -11,6 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/productos" element={<Product />} />
+        <Route path="/vendors" element={<Vendors />} />
 
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<h1>Bienvenido al Dashboard</h1>} />

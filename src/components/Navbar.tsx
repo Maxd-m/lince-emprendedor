@@ -7,8 +7,8 @@ function NavBar() {
   const logout = useAuthStore((state) => state.logout);
 
   const items = [
-    { name: "Productos", route: "/" },
-    { name: "Colaboradores", route: "/" },
+    { name: "Productos", route: "/productos" },
+    { name: "Colaboradores", route: "/vendors" },
     // user
     //   ? { name: "Mi cuenta", route: "/account" }
     //   : { name: "Iniciar sesión", route: "/login" },
@@ -57,17 +57,22 @@ function NavBar() {
               </label>
             </div>
             {/* Título en Desktop (oculto en móvil) */}
-            <a className="btn btn-ghost text-3xl hidden lg:flex">
+            {/* <a className="btn btn-ghost text-3xl hidden lg:flex"> */}
+            <Link to="/" className="btn btn-ghost text-3xl hidden lg:flex">
               Lince-emprendedor
-            </a>
+            </Link>
+            {/* </a> */}
           </div>
 
           {/* CENTER: Título (Móvil) + Menú horizontal (Desktop) */}
           <div className="navbar-center">
             {/* Título en Móvil (oculto en desktop) */}
-            <a className="btn btn-ghost text-2xl lg:hidden">
+            <Link to="/" className="btn btn-ghost text-2xl lg:hidden">
               Lince-emprendedor
-            </a>
+            </Link>
+            {/* <a className="btn btn-ghost text-2xl lg:hidden">
+              Lince-emprendedor
+            </a> */}
 
             {/* Menú en Desktop (oculto en móvil) */}
             <div className="hidden flex-none lg:block">
@@ -184,7 +189,7 @@ function NavBar() {
             </button>
           </div>
         </div>
-        <div className="flex flex-row items-center w-full overflow-x-auto gap-6 px-4 py-2 scrollbar-hide justify-around">
+        <div className="flex flex-row items-center w-full overflow-x-auto gap-6 px-4 mt-6 scrollbar-hide justify-around">
           {categories.map((category, index) => (
             <div
               key={index}
