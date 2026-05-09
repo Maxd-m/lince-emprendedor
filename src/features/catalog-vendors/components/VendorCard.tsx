@@ -1,4 +1,4 @@
-// src/components/VendorCard.tsx
+// src/features/catalog-vendors/components/VendorCard.tsx
 function VendorCard({ vendor }: { vendor: any }) {
   // Datos por defecto por si la API aún no los trae
   const rating = vendor.rating || 5;
