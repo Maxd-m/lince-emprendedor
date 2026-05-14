@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { fetchProductById } from "../api/productApi";
-import { Product } from "../types/product";
+import { Product } from "@/types/product";
 // Importamos el VendorCard desde tu feature de vendedores
 import { VendorCard } from "@/features/catalog-vendors";
 
@@ -55,7 +55,7 @@ export const ProductDetails = () => {
           {/* =========================================
               COLUMNA IZQUIERDA: Imágenes, Stock, Precio
               ========================================= */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 justify-evenly">
             {/* Carrusel / Imagen Principal */}
             <div className="w-full bg-base-200 rounded-2xl aspect-square md:aspect-[4/3] flex items-center justify-center overflow-hidden shadow-sm">
               <img
@@ -112,7 +112,7 @@ export const ProductDetails = () => {
 
             {/* Tarjeta del Vendedor */}
             <section>
-              <h3 className="text-xl font-bold mb-4 uppercase tracking-wider text-base-content/60 text-sm">
+              <h3 className="text-xl font-bold mb-4 uppercase tracking-wider text-base-content/60">
                 Vendido por
               </h3>
               <VendorCard vendor={product.vendor} />
@@ -121,7 +121,7 @@ export const ProductDetails = () => {
             {/* Reseñas */}
             <section>
               <div className="flex items-center gap-4 mb-6">
-                <h3 className="text-xl font-bold uppercase tracking-wider text-base-content/60 text-sm">
+                <h3 className="text-xl font-bold uppercase tracking-wider text-base-content/60 ">
                   Reseñas de clientes
                 </h3>
                 <div className="badge badge-lg badge-warning font-bold gap-1">

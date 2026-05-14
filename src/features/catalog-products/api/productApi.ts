@@ -1,5 +1,5 @@
 // productApi.ts
-import { Product } from "../types/product";
+import { Product } from "@/types/product";
 
 // Base de datos simulada basada en tu wireframe
 const mockProducts: Product[] = [
