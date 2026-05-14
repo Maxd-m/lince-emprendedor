@@ -7,6 +7,7 @@ import { ProductDetails } from "./features/catalog-products/components/ProductDe
 import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
 
 import "./App.css";
+import { VendorDetails } from "./features/catalog-vendors/index.ts";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/productos" element={<Product />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/vendors" element={<Vendors />} />
+        <Route path="/vendor/:id" element={<VendorDetails />} />
 
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<h1>Bienvenido al Dashboard</h1>} />
