@@ -3,6 +3,7 @@ import Home from "./pages/Home.tsx";
 import Login from "./pages/auth/Login.tsx";
 import Product from "./pages/products/Product.tsx";
 import Vendors from "./pages/vendor/Vendors.tsx";
+import Profile from "./pages/Profile.tsx";
 import { ProductDetails } from "./features/catalog-products/components/ProductDetails.tsx";
 import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
 
@@ -22,7 +23,7 @@ function App() {
 
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<h1>Bienvenido al Dashboard</h1>} />
-          <Route path="/perfil" element={<h1>Tu Perfil</h1>} />
+          <Route path="/perfil" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

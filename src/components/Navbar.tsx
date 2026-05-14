@@ -1,10 +1,17 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useAuthStore } from "../features/auth/store/authStore";
+import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
   // 1. Obtenemos el usuario y la función de logout del store
   const user = useAuthStore((state) => state.user);
   const logout = useAuthStore((state) => state.logout);
+
+  // Obtenemos la ubicación actual
+  const location = useLocation();
+
+  // Verificamos si la ruta es "/perfil"
+  const isProfilePage = location.pathname === "/perfil";
 
   const items = [
     { name: "Productos", route: "/productos" },
@@ -189,26 +196,28 @@ function NavBar() {
             </button>
           </div>
         </div>
-        <div className="flex flex-row items-center w-full overflow-x-auto gap-6 px-4 mt-6 scrollbar-hide justify-around">
-          {categories.map((category, index) => (
-            <div
-              key={index}
-              className="flex-none flex flex-col items-center gap-2"
-            >
-              <button className="flex flex-col items-center">
-                <div className="avatar">
-                  <div className="mask mask-squircle w-12">
-                    <img
-                      src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
-                      alt={category.name}
-                    />
+        {!isProfilePage && (
+          <div className="flex flex-row items-center w-full overflow-x-auto gap-6 px-4 mt-6 scrollbar-hide justify-around">
+            {categories.map((category, index) => (
+              <div
+                key={index}
+                className="flex-none flex flex-col items-center gap-2"
+              >
+                <button className="flex flex-col items-center">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12">
+                      <img
+                        src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
+                        alt={category.name}
+                      />
+                    </div>
                   </div>
-                </div>
-                <p className="italic text-sm">{category.name}</p>
-              </button>
-            </div>
-          ))}
-        </div>
+                  <p className="italic text-sm">{category.name}</p>
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* 2. SIDEBAR: Extraído del navbar para que funcione correctamente el overlay */}
