@@ -11,7 +11,7 @@ export const loginRequest = async (credentials: any) => {
           id: "1",
           name: "Admin Pro",
           email: "admin@ejemplo.com",
-          roles: ["buyer", "vendor"],
+          roles: ["buyer", "admin"],
         },
         token: "jwt-all",
       };
@@ -22,7 +22,7 @@ export const loginRequest = async (credentials: any) => {
           id: "2",
           name: "Juan Vendedor",
           email: "vendedor@ejemplo.com",
-          roles: ["vendor"],
+          roles: ["vendor", "buyer"],
         },
         token: "jwt-vendor",
       };

@@ -23,7 +23,7 @@ function App() {
 
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<h1>Bienvenido al Dashboard</h1>} />
-          <Route path="/perfil" element={<Profile />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -7,18 +7,15 @@ function NavBar() {
   const user = useAuthStore((state) => state.user);
   const logout = useAuthStore((state) => state.logout);
 
-  // Obtenemos la ubicación actual
+  // Obtenemos la ubicación actual (página en la que esta)
   const location = useLocation();
 
-  // Verificamos si la ruta es "/perfil"
-  const isProfilePage = location.pathname === "/perfil";
+  // Verificamos si la ruta es "/profile"
+  const isProfilePage = location.pathname === "/profile";
 
   const items = [
     { name: "Productos", route: "/productos" },
     { name: "Colaboradores", route: "/vendors" },
-    // user
-    //   ? { name: "Mi cuenta", route: "/account" }
-    //   : { name: "Iniciar sesión", route: "/login" },
   ];
 
   const categories = [
@@ -123,11 +120,9 @@ function NavBar() {
                         Hola, {user.name}
                       </li>
                       <li>
-                        <Link to="/perfil">Mi Perfil</Link>
+                        <Link to="/profile">Perfil</Link>
                       </li>
-                      <li>
-                        <Link to="/configuracion">Configuración</Link>
-                      </li>
+
                       <li>
                         <button
                           onClick={() => logout()}
@@ -271,11 +266,9 @@ function NavBar() {
                   Hola, {user.name}
                 </li>
                 <li>
-                  <Link to="/perfil">Mi Perfil</Link>
+                  <Link to="/profile">Perfil</Link>
                 </li>
-                <li>
-                  <Link to="/configuracion">Configuración</Link>
-                </li>
+
                 <li>
                   <button onClick={() => logout()} className="text-error mt-2">
                     Cerrar sesión
