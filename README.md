@@ -20,8 +20,8 @@ src/
   pages/          # Rutas de la app (Solo ensamblan las features)
 
   features/       # <--- EL NÚCLEO DE LA APP
-    admin-global/     # Panel para el Super Admin
-    admin-vendor/     # Panel para el Vendedor
+    purchases/        # Panel para compras que ha hecho el usuario
+    sales/            # Panel para ventas del usuario
     auth/             # Login, Registro, Recuperar clave
     catalog-products/ # Visualización de productos para el cliente
     catalog-vendors/  # Directorio de vendedores para el cliente
